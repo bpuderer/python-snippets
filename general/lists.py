@@ -16,7 +16,7 @@ del lst[0]
 print("lst:", lst)
 
 lst_copy = lst.copy() # shallow copy
-lst.clear()
+lst.clear() # del lst[:]
 print("lst:", lst, "lst_copy", lst_copy)
 
 # reverse, sort for in place reversing, sorting

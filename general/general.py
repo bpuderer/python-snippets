@@ -1,3 +1,5 @@
+import sys
+
 # NOP
 pass
 
@@ -20,3 +22,14 @@ print("iterable unpacking:", first, middle, last)
 
 # PEP 238 /=division //=floor
 print("5/3:", 5/3, "5//3:", 5//3)
+
+
+# remove from namespace
+del s
+
+
+# returns range class
+print('range(1, 10, 2) as list:', list(range(1, 10, 2)))
+
+
+print('module search paths:', sys.path)
