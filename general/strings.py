@@ -1,4 +1,5 @@
 from collections import namedtuple
+import math
 import string
 
 
@@ -16,7 +17,14 @@ movie = {'title': 'Life of Brian', 'director': 'Terry Jones', 'year': 1979}
 print("{0[title]} directed by {0[director]} was released in {0[year]}".format(movie))
 
 # https://docs.python.org/3/library/string.html#formatstrings
-print("{:0>+8.2f}".format(3.14159))
+print("{:0>+8.3f}".format(math.pi))
+
+
+# PEP 498 Literal String Interpolation
+# Formatted string literals, aka f-strings
+# f or F. {expression}
+print (f'Pi: {math.pi:.5f}')
+
 
 
 # concat strings in iterable using separator
