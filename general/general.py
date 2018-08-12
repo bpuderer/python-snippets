@@ -33,3 +33,7 @@ print('range(1, 10, 2) as list:', list(range(1, 10, 2)))
 
 
 print('module search paths:', sys.path)
+
+
+# raises AssertionError if false
+assert 1 in [1, 2], "some message"
