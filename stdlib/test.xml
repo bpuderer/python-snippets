@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<actors xmlns:fictional="http://characters.example.com"
+        xmlns="http://people.example.com">
+    <actor name="John Cleese">
+        <birthplace>Weston-super-Mare, Somerset, England</birthplace>
+        <fictional:character>Black Knight</fictional:character>
+        <fictional:character>First Centurion</fictional:character>
+        <fictional:character>Robin Hood</fictional:character>
+        <fictional:character>Archie Leach</fictional:character>
+    </actor>
+    <actor name="Graham Chapman">
+        <birthplace>Leicester, England</birthplace>
+        <fictional:character>King Arthur</fictional:character>
+        <fictional:character>Brian</fictional:character>
+    </actor>
+    <actor name="Eric Idle">
+        <birthplace>South Shields, County Durham, England</birthplace>
+        <fictional:character>The Dead Collector</fictional:character>
+        <fictional:character>Harry the Haggler</fictional:character>
+        <fictional:character>Gunther</fictional:character>
+        <fictional:character>Berthold</fictional:character>
+    </actor>
+    <actor name="Nigel Terry">
+        <birthplace>Bristol, Gloucestershire, England</birthplace>
+        <fictional:character>King Arthur</fictional:character>
+        <fictional:character>General Cobb</fictional:character>
+    </actor>
+    <actor name="Michael Palin">
+        <birthplace>Broomhill, Sheffield, West Riding of Yorkshire, England</birthplace>
+        <fictional:character>Sir Galahad</fictional:character>
+        <fictional:character>Mr. Big Nose</fictional:character>
+        <fictional:character>Jack Lint</fictional:character>
+        <fictional:character>Ken Pile</fictional:character>
+    </actor>
+    <extras>
+        <artist name="Mel Ferrer">
+            <birthplace>Elberon, New Jersey, U.S.</birthplace>
+            <fictional:character>King Arthur</fictional:character>
+        </artist>
+    </extras>
+</actors>
