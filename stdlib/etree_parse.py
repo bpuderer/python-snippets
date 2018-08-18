@@ -1,6 +1,7 @@
 # https://docs.python.org/3/library/xml.etree.elementtree.html#xpath-support
 
 import xml.etree.ElementTree as ET
+import xml.dom.minidom
 
 
 ns = {'real_person': 'http://people.example.com',
@@ -54,11 +55,17 @@ print("\nFirst artist name:")
 print(root.find(".//real_person:artist", ns).get('name'))
 
 
-# modify
+# modify - existing element
 actor_cleese = root.find("./real_person:actor[@name='John Cleese']", ns)
 actor_cleese.set('name', 'UPDATED name')
 birthplace_cleese = actor_cleese.find("./real_person:birthplace", ns)
 birthplace_cleese.text += ' UPDATED'
+
+# add element
+addl_cleese_character = ET.SubElement(actor_cleese, '{http://characters.example.com}character')
+addl_cleese_character.text = 'Wise Man #1'
+
+
 
 xml_str = ET.tostring(root, encoding='utf-8')
 print(xml_str)
