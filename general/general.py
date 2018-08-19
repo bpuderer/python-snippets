@@ -33,3 +33,6 @@ print('module search paths:', sys.path)
 
 # raises AssertionError if false
 assert 1 in [1, 2], "some message"
+
+
+print('PEP 515 underscores in numeric literals:', 1_000_000)
