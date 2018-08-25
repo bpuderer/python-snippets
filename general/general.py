@@ -36,3 +36,8 @@ assert 1 in [1, 2], "some message"
 
 
 print('PEP 515 underscores in numeric literals:', 1_000_000)
+
+
+# anonymous function
+# https://www.artima.com/weblogs/viewpost.jsp?thread=98196
+print(list(map(lambda x: x + 2, [7, 11])))
