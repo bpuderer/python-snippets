@@ -8,7 +8,7 @@
 # $ python -m flask run
 
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, abort
 app = Flask(__name__)
 
 
@@ -28,7 +28,7 @@ def hello_world():
 
 
 # variable rules- string, int, float, path, uuid
-@app.route('/user/<int:user_id>', methods=['POST', 'GET'])
+@app.route('/users/<int:user_id>', methods=['POST', 'GET'])
 def show_user(user_id):
     if request.method == 'POST':
         if request.json is None:
