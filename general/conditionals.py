@@ -8,7 +8,7 @@ else:
     print(x, "is positive")
 
 
-# conditional
+# conditional expression
 print("trueval" if True else "falseval")
 print("trueval" if False else "falseval")
 
@@ -16,6 +16,12 @@ d = {'a': 1}
 # d.get('b')*2  -> TypeError
 print(d['a']*2 if 'a' in d else None)
 print(d['b']*2 if 'b' in d else None)
+
+# elif using conditional expression
+# https://stackoverflow.com/a/9987533  Raymond Hettinger
+# parentheses added for readability
+l = [2, 1, 3, 1]
+print(['one' if v==1 else ('two' if v==2 else 'not one or two') for v in l])
 
 
 # chained
