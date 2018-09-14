@@ -15,7 +15,7 @@
 # and then when outputting data, encode it to bytes as late as possible.
 
 # At any point in your program, you need to know whether you have a byte string
-# or a unicode string. This shouldn’t be a matter of guessing, it should be by design.
+# or a unicode string. This shouldn't be a matter of guessing, it should be by design.
 # In addition, if you have a byte string, you should know what encoding it is
 # if you ever intend to deal with it as text.
 
