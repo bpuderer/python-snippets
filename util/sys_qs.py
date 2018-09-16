@@ -4,10 +4,14 @@ import sys
 from xml.dom import minidom
 
 
-s = sys.stdin.read()
+if len(sys.argv) == 1 or sys.argv[1] == '-':
+    s = sys.stdin.read()
+else:
+    with open(sys.argv[1]) as f:
+        s = f.read()
 
 # pretty print xml
-out = minidom.parseString(s).toprettyxml(indent="  ")
+out = minidom.parseString(s).toprettyxml(indent='  ')
 
 # pretty print json
 #out = json.dumps(json.loads(s), indent=2)
