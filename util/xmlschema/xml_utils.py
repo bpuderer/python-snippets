@@ -4,25 +4,19 @@ from lxml import etree
 
 
 # http://lxml.de/validation.html
-def validate_against_xsd(xsd_str, xml_str):
+def validate_against_xsd(xsd_file, xml_file):
     """validate xml doc against xsd"""
 
-    xmlschema_doc = etree.parse(StringIO(xsd_str))
+    xmlschema_doc = etree.parse(xsd_file)
     xmlschema = etree.XMLSchema(xmlschema_doc)
 
-    doc = etree.parse(StringIO(xml_str))
+    doc = etree.parse(xml_file)
     # xmlschema.assertValid(doc)    # raises lxml.etree.DocumentInvalid
     # xmlschema.validate(doc)       # returns True/False
     xmlschema.assert_(doc)          # raises AssertionError
 
 
-def validate_against_xsd_from_files(xsd_filename, xml_filename):
-    """helper to validate using files"""
+def validate_against_xsd_str(xsd_str, xml_str):
+    """validate xml doc against xsd from strings"""
 
-    with open(xsd_filename) as f:
-        xsd_str = f.read()
-
-    with open(xml_filename) as f:
-        xml_str = f.read()
-
-    validate_against_xsd(xsd_str, xml_str)
+    validate_against_xsd(StringIO(xsd_str), StringIO(xml_str))
