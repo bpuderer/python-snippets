@@ -42,5 +42,5 @@ print(b_utf8, type(b_utf8))
 # decode- bytes -> code points
 # default encoding is 'utf-8'
 # https://docs.python.org/3/library/stdtypes.html#bytes.decode
-s_back = b_utf8.decode('utf-8')
+s_back = b_utf8.decode()
 print(s_back, type(s_back))
