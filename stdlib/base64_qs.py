@@ -2,10 +2,10 @@ import base64
 
 
 orig_str = 'data to be encoded'
-byte_str = orig_str.encode('utf-8')
+byte_str = orig_str.encode()
 encoded  = base64.b64encode(byte_str)
 decoded  = base64.b64decode(encoded)
-new_orig = decoded.decode('utf-8')
+new_orig = decoded.decode()
 
 print('Orig str:    ', orig_str)
 print('Byte str:    ', byte_str)

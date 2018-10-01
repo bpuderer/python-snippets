@@ -11,15 +11,15 @@ else:
         s = f.read()
 
 # pretty print xml
-out = minidom.parseString(s).toprettyxml(indent='  ')
+#out = minidom.parseString(s).toprettyxml(indent='  ')
 
 # pretty print json
 #out = json.dumps(json.loads(s), indent=2)
 
 # base64 encode
-#out = base64.b64encode(s.encode('utf-8')).decode('utf-8')
+#out = base64.b64encode(s.encode()).decode()
 
 # base64 decode
-#out = base64.b64decode(s).decode('utf-8')
+out = base64.b64decode(s.encode()).decode()
 
 print(out)

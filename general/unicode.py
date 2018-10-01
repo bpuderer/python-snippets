@@ -33,10 +33,14 @@ print(s, type(s))
 
 
 # encode- code points -> bytes
-b_utf8 = s.encode('utf-8')
+# default encoding is 'utf-8'
+# https://docs.python.org/3/library/stdtypes.html#str.encode
+b_utf8 = s.encode()
 print(b_utf8, type(b_utf8))
 
 
 # decode- bytes -> code points
+# default encoding is 'utf-8'
+# https://docs.python.org/3/library/stdtypes.html#bytes.decode
 s_back = b_utf8.decode('utf-8')
 print(s_back, type(s_back))
