@@ -1,4 +1,6 @@
-test_file = 'file_io_demo.txt'
+import os
+
+test_file = './file_io_demo.txt'
 
 # use with() to ensure file is closed
 # 'w' overwrites, 'a' appends, 'r' for reading (default), 'r+' for reading and writing
@@ -37,3 +39,7 @@ with open(test_file) as f:
 with open(test_file) as f:
     print("all lines as list:", list(f))
     #print("all lines as list:", f.readlines())
+
+
+# cleanup
+os.remove(test_file)
