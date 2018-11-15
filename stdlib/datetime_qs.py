@@ -2,7 +2,10 @@ from datetime import date, datetime, timedelta, timezone
 
 
 # date(year, month, day), naive
-print(f'today: {repr(date.today())} {date.today().isoformat()}')
+today = date.today()
+print(f'today: {repr(today)} {today.isoformat()}')
+# date -> datetime.  for datetime -> date, use datetime.date()
+print(f'as datetime: {datetime(today.year, today.month, today.day)}')
 print(f'from POSIX ts 1535986578: {date.fromtimestamp(1535986578)}')
 # print(f'from 2018-09-03: {repr(date.fromisoformat("2018-09-03"))}')
 
@@ -16,10 +19,10 @@ print(f'POSIX ts from naive, current, local dt: {datetime.now().timestamp()}')
 
 # timedelta
 print(f'# seconds in an hour: {timedelta(hours=1).total_seconds()}')
-print(f'5 days from today: {date.today() + timedelta(days=5)}')
-d1 = datetime(2018, 9, 3, 12, 30)
-d2 = datetime(2017, 10, 23, 9)
-print(f'{d1} - {d2}: {d1 - d2}')
+print(f'5 days from today: {today + timedelta(days=5)}')
+dt1 = datetime(2018, 9, 3, 12, 30)
+dt2 = datetime(2017, 10, 23, 9)
+print(f'{dt1} - {dt2}: {dt1 - dt2}')
 
 
 # strftime, strptime
