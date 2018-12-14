@@ -69,8 +69,8 @@ def next_quarter_broadcast_dates(length=1, start_offset=0, end_offset=0):
             end+timedelta(days=end_offset))
 
 
-def get_broadcast_weeks(start, end):
-    """return broadcast weeks for date range"""
+def get_broadcast_week_starts(start, end):
+    """return broadcast week starts for date range"""
 
     weeks = []
     temp = start
@@ -81,3 +81,10 @@ def get_broadcast_weeks(start, end):
             weeks.append(temp)
             temp += timedelta(days=7)
     return weeks
+
+
+def get_broadcast_weeks(start, end):
+    """return broadcast weeks with start, end for date range"""
+
+    starts = get_broadcast_week_starts(start, end)
+    return [(start, start+timedelta(days=6)) for start in starts]
