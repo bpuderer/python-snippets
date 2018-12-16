@@ -66,7 +66,6 @@ def next_quarter_broadcast_dates(num=1, start_offset=0, end_offset=0):
     now = date.today()
     year = now.year
     quarter = quarter_for_month(now.month)
-
     while True:
         start, end = broadcast_quarter_dates(year, quarter, num=num,
                                              start_offset=start_offset,
@@ -74,7 +73,6 @@ def next_quarter_broadcast_dates(num=1, start_offset=0, end_offset=0):
         if now < start:
             break
         year, quarter = next_quarter(year, quarter)
-
     return start, end
 
 def broadcast_week_starts(start, end):
