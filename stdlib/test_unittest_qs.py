@@ -36,6 +36,11 @@ class BasicTestCase(unittest.TestCase):
             any(42)
 
 
+    def test_error_check_message(self):
+        with self.assertRaisesRegex(ValueError, 'ValueError msg'):
+            raise ValueError('ValueError msg')
+
+
     def test_error_result(self):
         raise TypeError
 

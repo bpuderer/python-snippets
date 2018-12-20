@@ -19,12 +19,23 @@ class BroadcastCalUtilsTestCase(unittest.TestCase):
         self.assertEqual(broadcast_month_start(2018, 10), date(2018, 10, 1))
 
     def test_quarter_start_month(self):
-        self.assertEqual(quarter_start_month(3), 7)
+        quarters = (1, 2, 3, 4)
+        months = (1, 4, 7, 10)
+        for quarter, month in zip(quarters, months):
+            self.assertEqual(quarter_start_month(quarter), month)
+        with self.assertRaisesRegex(ValueError, 'invalid quarter'):
+            quarter_start_month(0)
         with self.assertRaisesRegex(ValueError, 'invalid quarter'):
             quarter_start_month(5)
 
+
     def test_quarter_for_month(self):
-        self.assertEqual(quarter_for_month(10), 4)
+        months = range(1, 13)
+        quarters = (1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4)
+        for month, quarter in zip(months, quarters):
+            self.assertEqual(quarter_for_month(month), quarter)
+        with self.assertRaisesRegex(ValueError, 'invalid month'):
+            quarter_for_month(0)
         with self.assertRaisesRegex(ValueError, 'invalid month'):
             quarter_for_month(13)
 
