@@ -65,9 +65,14 @@ birthplace_cleese.text += ' UPDATED'
 addl_cleese_character = ET.SubElement(actor_cleese, '{http://characters.example.com}character')
 addl_cleese_character.text = 'Wise Man #1'
 
+# delete element
+nigel = root.find("./real_person:actor[@name='Nigel Terry']", ns)
+root.remove(nigel)
 
 
 xml_str = ET.tostring(root, encoding='utf-8')
-print(xml_str)
+# print(xml_str)
+
+print(xml.dom.minidom.parseString(xml_str).toprettyxml(indent='', newl=''))
 
 # tree.write('out.xml')
