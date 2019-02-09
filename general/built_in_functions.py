@@ -66,5 +66,13 @@ print(f'even vals of {nums}: {list(filter(lambda x: x % 2 == 0, nums))}')
 print(f'filter "trick" used to filter True values: {list(filter(None, nums))}')
 
 
+# finding items in sequence, one step past using 'in'.
+# to find all occurrences, use comprehension/generator expression
+lst = [{'a': 9}, {'a': 42}, {'a': 28}, {'a': 44}, {'a': 3}]
+print(f'first match where a=28: {next((d for d in lst if d["a"] == 28), None)}')
+print(f'a with val of 29 in list? {any(d["a"] == 29 for d in lst)}')
+print(f'index of first match where a=28: {next((i for (i, d) in enumerate(lst) if d["a"] == 28), -1)}')
+
+
 #fromuser = input('Type something and hit Enter: ')
 #print('you entered:', fromuser)
