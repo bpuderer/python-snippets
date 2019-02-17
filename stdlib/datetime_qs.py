@@ -20,9 +20,10 @@ print(f'POSIX ts from naive, current, local dt: {datetime.now().timestamp()}')
 # timedelta
 print(f'# seconds in an hour: {timedelta(hours=1).total_seconds()}')
 print(f'5 days from today: {today + timedelta(days=5)}')
-dt1 = datetime(2018, 9, 3, 12, 30)
-dt2 = datetime(2017, 10, 23, 9)
-print(f'{dt1} - {dt2}: {dt1 - dt2}')
+dt1 = datetime(2019, 2, 17, 12, 30, 28, 990000)
+dt2 = datetime(2019, 2, 17, 12, 30, 29, 115000)
+print(f'{dt2} - {dt1}: {dt2 - dt1}  seconds delta: {(dt2-dt1).total_seconds()}')
+print(f'{dt1} - {dt2}: {dt1 - dt2}  seconds delta: {(dt1-dt2).total_seconds()}')
 
 
 # strftime, strptime
