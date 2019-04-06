@@ -1,3 +1,5 @@
+from contextlib import suppress
+
 try:
     # pass
     # print(idontexist)
@@ -15,3 +17,12 @@ else:
 finally:
     print("always executes")
 
+
+print('---')
+
+# https://docs.python.org/3/library/contextlib.html#contextlib.suppress
+with suppress(FileNotFoundError):
+    print('before exception')
+    raise FileNotFoundError
+    print("after exception - won't execute")
+print('after context')
