@@ -1,6 +1,6 @@
 import unittest
-from datetime import datetime
-from datetime_utils import Range, overlap_days, ranges_overlap, in_range, all_in_range
+from datetime import date, datetime
+from datetimeutils.datetime_utils import Range, overlap_days, ranges_overlap, in_range, all_in_range, date_to_datetime
 
 
 class OverlapDaysTestCase(unittest.TestCase):
@@ -104,5 +104,8 @@ class InRangeTestCase(unittest.TestCase):
         r2 = Range(start=datetime(2018, 1, 10), end=datetime(2018, 1, 15))
         self.assertFalse(all_in_range([r1_1, r1_2, r1_3, r1_4], r2))
 
-if __name__ == '__main__':
-    unittest.main()
+
+class MiscTestCase(unittest.TestCase):
+
+    def test_date_to_datetime(self):
+        self.assertEqual(date_to_datetime(date(2017, 2, 5)), datetime(2017, 2, 5))

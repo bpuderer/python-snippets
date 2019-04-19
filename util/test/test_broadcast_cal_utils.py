@@ -1,7 +1,7 @@
 import unittest
 from datetime import date
 from freezegun import freeze_time
-from broadcast_cal_utils import *
+from datetimeutils.broadcast_cal_utils import *
 
 
 class BroadcastCalUtilsTestCase(unittest.TestCase):
@@ -122,7 +122,3 @@ class BroadcastCalUtilsTestCase(unittest.TestCase):
         self.assertEqual(broadcast_weeks(date(2018, 12, 10), date(2018, 12, 18)),
                          [(date(2018, 12, 10), date(2018, 12, 16)),
                           (date(2018, 12, 17), date(2018, 12, 23))])
-
-
-if __name__ == '__main__':
-    unittest.main()

@@ -1,4 +1,5 @@
 from collections import namedtuple
+from datetime import datetime
 from itertools import combinations
 
 
@@ -29,3 +30,7 @@ def in_range(r1, r2):
 def all_in_range(ranges, r2):
     """check if all ranges are in range of r2"""
     return all(in_range(r1, r2) for r1 in ranges)
+
+def date_to_datetime(d):
+    """convert date to datetime"""
+    return datetime(d.year, d.month, d.day)
