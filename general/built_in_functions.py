@@ -76,3 +76,15 @@ print(f'index of first match where a=28: {next((i for (i, d) in enumerate(lst) i
 
 #fromuser = input('Type something and hit Enter: ')
 #print('you entered:', fromuser)
+
+
+# setattr to set attribute using variable
+class Test:
+    pass
+
+test = Test()
+key = 'abc'
+val = 123
+
+setattr(test, key, val)
+print(getattr(test, key))
