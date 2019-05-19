@@ -63,3 +63,7 @@ print("d:", d)
 d1 = {'a': 0, 'b': 1}
 d2 = {'a': -1, 'c': 2}
 print("d1:", d1, "d2:", d2, "merged:", {**d1, **d2})
+
+
+# flip/invert keys, values of a dict
+print(f'{d} with keys/values flipped: { {v: k for k, v in d.items()} }')
