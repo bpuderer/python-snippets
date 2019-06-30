@@ -1,6 +1,6 @@
 ## Python snippets
 
-Collection of python code snippets 
+Collection of python code snippets
 
 #### Awesome References
 
@@ -18,7 +18,7 @@ Collection of python code snippets
 
 [Facts and Myths about Python names and values](https://www.youtube.com/watch?v=_AEJHKGk9ns)
 
-[Code Like a Pythonista: Idiomatic Python](http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html)
+[Code Like a Pythonista: Idiomatic Python](https://david.goodger.org/projects/pycon/2007/idiomatic/presentation.html)
 
 [Learn python3 in Y minutes](https://learnxinyminutes.com/docs/python3/)
 
