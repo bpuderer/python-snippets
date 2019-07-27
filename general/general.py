@@ -41,3 +41,9 @@ print('PEP 515 underscores in numeric literals:', 1_000_000)
 # anonymous function
 # https://www.artima.com/weblogs/viewpost.jsp?thread=98196
 print(list(map(lambda x: x + 2, [7, 11])))
+
+# sort by last name
+players = ['Drew Brees', 'Archie Manning', 'Bobby Hebert', 'Aaron Brooks']
+print(sorted(players, key=lambda n: n.split()[-1]))
+
+# no arg lambda that returns True - lambda: True

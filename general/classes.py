@@ -4,6 +4,8 @@ great presentation from Raymond Hettinger
 most docstrings below quote and paraphrase RH
 """
 
+# "self" is syntactic sugar for ClassName.method_name(instance)
+
 class MyClass:
 
     version = '0.1'    # class variable. be very careful with mutables

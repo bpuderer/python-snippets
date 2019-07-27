@@ -53,13 +53,13 @@ print("d:", d)
 
 
 d = dict(a=0, b=1)
-d.update(b=11, c=2) # update, overwriting
+d.update(b=11, c=2)  # update/extend, overwriting
 d.update({'a': -1})
 d.update([('a', -2), ['b', 111]])
 print("d:", d)
 
 
-# merge dicts using PEP 448
+# merge dicts, don't mutate using PEP 448
 d1 = {'a': 0, 'b': 1}
 d2 = {'a': -1, 'c': 2}
 print("d1:", d1, "d2:", d2, "merged:", {**d1, **d2})

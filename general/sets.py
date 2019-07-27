@@ -1,3 +1,5 @@
+# unordered collection of unique, immutable objects
+
 # set() for empty set, not {} which is empty dict
 s1 = {'purple', 'green', 'gold'}
 s2 = {'black', 'gold'}

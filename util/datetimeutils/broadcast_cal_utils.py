@@ -8,8 +8,8 @@ from datetime import date, timedelta
 
 def broadcast_week_start(d):
     """return start of broadcast week from date. always on monday"""
-    while d.weekday() != 0:
-        d -= timedelta(days=1)
+    if d.weekday() != 0:
+        d -= timedelta(days=d.weekday())
     return d
 
 def broadcast_month_start(year, month):

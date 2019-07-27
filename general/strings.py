@@ -8,7 +8,7 @@ print("and {} for {} completely {}".format("now", "something", "different"))
 # simple field names: names or numbers
 print("and {when} for {1} completely {0}".format("different", "something", when="now"))
 
-# compount field name, . or []
+# compound field name, . or []
 Point = namedtuple('Point', ['x', 'y'])
 p = Point(-1.0, y=-2.0)
 print("x={0.x} y={0.y}".format(p))
@@ -58,6 +58,8 @@ print(s, 'endswith', 'z:', s.endswith('z'))
 s = 'and now for something completely different'
 print(s, 'split:', s.split())
 print(s, 'split on something:', s.split('something'))
+
+print('"a:b" partitioned on ":"', 'a:b'.partition(':'))
 
 
 # replace all occurrences. can specify # replacements

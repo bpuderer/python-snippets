@@ -8,7 +8,7 @@ else:
     print(x, "is positive")
 
 
-# conditional expression
+# conditional expression PEP 308
 print("trueval" if True else "falseval")
 print("trueval" if False else "falseval")
 
