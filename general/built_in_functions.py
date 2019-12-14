@@ -33,10 +33,11 @@ print('element after first True val:', next(i))
 print('range(1, 10, 2) as list:', list(range(1, 10, 2)))
 
 
-# str, repr, eval
+# str() __str__, repr __repr__
+# repr for devs...debugger friendly, str for clients
 now = datetime.now()
-repr_now = repr(now)
-print(f'readable: {now}  unambiguous: {repr_now}') # args converted to strings
+print('str() for human readable: ' + str(now))
+print('repr() for unambiguous string representation of object: ' + repr(now))
 
 
 lst = [2, 8, 3]

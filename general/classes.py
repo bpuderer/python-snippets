@@ -19,6 +19,7 @@ class MyClass:
         https://www.youtube.com/watch?v=HTLu2DFOdTg&t=7m40s """
         self.lst = []
         self.val = val
+        MyClass._spam += 1
 
     def add(self, x):
         self.lst.append(x)
