@@ -2,9 +2,13 @@
 # an expression followed by a for clause, then zero or more for or if clauses.
 print("List comprehension:")
 print("squares of numbers divisible by 3 in [0..10]:", [i**2 for i in range(11) if i % 3 == 0])
+
 lst = [[0, 1], [2], [], [3, 4, 5]]
 print(lst, "flattened:", [item for sublist in lst for item in sublist])
-print("nested:", [[(x,y) for x in range(3)] for y in range(2)])
+
+# later for clause nested in earlier for clause
+print("nested:", [(x, y) for x in range(3) for y in range(2)])
+
 words = ['foo', 'bar', 'baz']
 print("conditional:", [word.upper() if word.startswith('b') else word for word in words])
 

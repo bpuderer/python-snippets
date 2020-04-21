@@ -1,5 +1,6 @@
 # http://pythontutor.com/
 from itertools import zip_longest
+from decimal import Decimal
 
 
 print('CLASSIC GOTCHA: Mutable default args')
@@ -102,3 +103,12 @@ g = (i+j for i in lst1 for j in lst2)
 lst1 = [999, 999]
 lst2 = [100, 200]
 print(list(g))
+
+
+print('-----')
+
+
+# round - **decimal** rounding. rounds towards **even** numbers if in middle/tied
+# see Note around floats and their limitations:  https://docs.python.org/3/library/functions.html#round
+print(f'{round(Decimal("2.55"), 1)} {round(Decimal("2.65"), 1)}')
+print(f'{round(2.55, 1)} {round(2.65, 1)}')

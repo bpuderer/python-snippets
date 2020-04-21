@@ -1,6 +1,9 @@
 from datetime import datetime
+from decimal import Decimal
+import functools
 from itertools import zip_longest, chain
 from operator import itemgetter
+import random
 
 
 # print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
@@ -27,6 +30,12 @@ print(f'all elements in {tup} True? {all(tup)}')
 i = iter((False, 0, True, 'spam'))
 any(i)
 print('element after first True val:', next(i))
+
+# iter with sentinel. first arg is callable object. StopIteration raised
+# when returned value equals sentinel
+randint_1_3 = functools.partial(random.randint, 1, 3)
+for rand in iter(randint_1_3, 2):
+    print(f'{rand} != 2')
 
 
 # returns range class
@@ -62,9 +71,10 @@ print(f"{s} reversed: {''.join(reversed(s))}")
 # filter, map mostly replaced by comprehensions
 nums = [3, 9, 0, 28, 44, 1]
 print(f'{nums} doubled: {list(map(lambda x: x*2, nums))}')
+
 print(f'even vals of {nums}: {list(filter(lambda x: x % 2 == 0, nums))}')
 # complementary function - itertools.filterfalse()
-print(f'filter "trick" used to filter True values: {list(filter(None, nums))}')
+print(f'filter "trick" used to remove False values: {list(filter(None, nums))}')
 
 
 # finding items in sequence, one step past using 'in'.
@@ -89,3 +99,8 @@ val = 123
 
 setattr(test, key, val)
 print(getattr(test, key))
+
+
+# round - **decimal** rounding. rounds towards **even** numbers if in middle/tied
+# see Note around floats and their limitations:  https://docs.python.org/3/library/functions.html#round
+print(f'{round(Decimal("2.55"), 1)} {round(Decimal("2.65"), 1)}')
