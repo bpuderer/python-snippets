@@ -1,5 +1,5 @@
 # Example code from Bo Milanovich's "Python Desktop Application Development"
-# course on LinkedIn Learning
+# course on Pluralsight
 # Completed 5/6/20
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
