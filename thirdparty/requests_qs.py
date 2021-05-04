@@ -31,4 +31,5 @@ data = 'some data'
 resp = requests.post('http://127.0.0.1:5000/users/2010', params=params,
                      data=data, headers=headers, timeout=_TIMEOUT)
 print(resp.status_code, resp.text)
+print(resp.headers['date'])    # dict keys are case-insensitive
 assert resp.status_code == requests.codes.bad_request
