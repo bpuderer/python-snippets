@@ -37,4 +37,4 @@ tests = (([], []),
         ([0, 1, 2, 2, 2, 2, 2, 4, 4, 4], [0, 1, 2, 2, 4, 4]))
 for test in tests:
     allow_one_duplicate_in_sorted_nums_list(test[0])
-    assert test[0] == test[1]
+    assert test[0] == test[1], f'Expected: {test[1]} Actual: {test[0]}'
