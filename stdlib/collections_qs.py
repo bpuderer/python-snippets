@@ -3,11 +3,14 @@ from collections import defaultdict, OrderedDict, Counter, namedtuple, deque
 
 # dict subclass with optional iterable or mapping on instantiation
 # 0 returned instead of KeyError if missing
-test_str = 'these are attack eyebrows'
-c = Counter(test_str)
-print('Counter for ', '"', test_str, '": ', c, sep='')
-print('"z" occurs', c['z'], 'times')
+c = Counter("these are attack eyebrows")
+print("3 most common", c.most_common(3))
+print('"s" occurs', c['s'], 'times')
 
+c = Counter()
+c.update('b')
+c.update({'b': 2})
+print(c)
 
 print('---')
 
