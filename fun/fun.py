@@ -38,3 +38,22 @@ tests = (([], []),
 for test in tests:
     allow_one_duplicate_in_sorted_nums_list(test[0])
     assert test[0] == test[1], f'Expected: {test[1]} Actual: {test[0]}'
+
+
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(f'5! = {factorial(5)}')
+
+
+def recur_fibo(n):
+   if n <= 1:
+       return n
+   else:
+       return(recur_fibo(n-1) + recur_fibo(n-2))
+
+for n in range(10):
+    print(recur_fibo(n))
