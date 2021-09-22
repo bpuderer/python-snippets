@@ -49,11 +49,11 @@ def factorial(n):
 print(f'5! = {factorial(5)}')
 
 
-def recur_fibo(n):
+def fib(n):
    if n <= 1:
        return n
    else:
-       return(recur_fibo(n-1) + recur_fibo(n-2))
+       return(fib(n - 1) + fib(n - 2))
 
 for n in range(10):
-    print(recur_fibo(n))
+    print(fib(n))
