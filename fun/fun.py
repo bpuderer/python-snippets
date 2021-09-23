@@ -57,3 +57,23 @@ def fib(n):
 
 for n in range(10):
     print(fib(n))
+
+
+def is_balanced(test_str):
+    matching_start = {'}': '{', ']': '[', ')': '('}
+    stack = []
+    for char in test_str:
+        if char in ['{', '(', '[']:
+            stack.append(char)
+        elif char in ['}', ')', ']']:
+            if stack and stack[-1] == matching_start[char]:
+                stack.pop()
+            else:
+                return False
+    if stack:
+        return False
+    return True
+
+tests = ('()', '{{}}', '{(})')
+for test in tests:
+    print(f'{test}: {is_balanced(test)}')
