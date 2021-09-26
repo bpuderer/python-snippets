@@ -39,7 +39,7 @@ class LinkedList:
             curr.next = temp
         self.node_count += 1
 
-    def insert_at_given_position(self, data, position):
+    def insert_at_position(self, data, position):
         temp = Node(data)
         if self.head is None:
             self.head = temp
@@ -106,8 +106,8 @@ list1.insert_at_beginning(5)
 list1.insert_at_beginning(6)
 list1.insert_at_end(7)
 list1.insert_at_end(8)
-list1.insert_at_given_position(1, 1)
-list1.insert_at_given_position(3, 4)
+list1.insert_at_position(1, 1)
+list1.insert_at_position(3, 4)
 print(list1)
 list1.delete_from_beginning()
 list1.delete_from_end()
