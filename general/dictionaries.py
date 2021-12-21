@@ -67,3 +67,13 @@ print("d1:", d1, "d2:", d2, "merged:", {**d1, **d2})
 
 # flip/invert keys, values of a dict
 print(f'{d} with keys/values flipped: { {v: k for k, v in d.items()} }')
+
+
+# key with max value
+d = {'a': 0, 'b': -1, 'c': 2, 'd': 2}
+print(max(d, key=d.get))
+
+# get all keys of same max val
+max_val = max(d.values())
+keys_of_max_val = [key for key in d if d[key] == max_val]
+print(keys_of_max_val)

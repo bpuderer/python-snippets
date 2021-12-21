@@ -43,6 +43,21 @@ def chunks(seq, n):
         yield seq[start:start + n]
 
 
+def substrings(test_str):
+    length = len(test_str)
+    return [test_str[i: j+1] for i in range(length) for j in range(i, length)]
+    #return [test_str[i: j] for i in range(length) for j in range(i + 1, length + 1)]
+
+
+# https://stackoverflow.com/a/3844832
+def all_equal(iterator):
+    iterator = iter(iterator)
+    try:
+        first = next(iterator)
+    except StopIteration:
+        return True
+    return all(first == x for x in iterator)
+
 
 if __name__ == "__main__":
     print(random_mac(separator='-'))
@@ -51,3 +66,8 @@ if __name__ == "__main__":
 
     print(list(chunks('abcdefghijklmnop', 3)))
     print(list(chunks([1,2,3,4,5,6,7,8,9,10], 3)))
+
+    print(substrings("abcde"))
+
+    print(all_equal([1,1,1,1,1]))
+    print(all_equal(iter([1,1,1,2,1])))
