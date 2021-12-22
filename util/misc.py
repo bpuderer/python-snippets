@@ -59,6 +59,16 @@ def all_equal(iterator):
     return all(first == x for x in iterator)
 
 
+def seq_indexes(n, seq):
+    """n indexes of a sequence that loop/repeat
+    Ex. seq_indexes(5, [9, 42, 2112]) -> 0, 1, 2, 0, 1
+    """
+    for i in range(n):
+        yield i % len(seq)
+
+# Great recipes here: https://docs.python.org/3/library/itertools.html#itertools-recipes
+
+
 if __name__ == "__main__":
     print(random_mac(separator='-'))
     print(random_mac(oui='09be84'))
@@ -71,3 +81,5 @@ if __name__ == "__main__":
 
     print(all_equal([1,1,1,1,1]))
     print(all_equal(iter([1,1,1,2,1])))
+
+    print(list(seq_indexes(6, [3, 9, 28])))
