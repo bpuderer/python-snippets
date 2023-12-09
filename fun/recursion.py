@@ -21,7 +21,9 @@ print(mult_recur(3, 4))
 
 
 def factorial(n):
-    if n == 1:
+    if type(n) is not int or n < 0:
+        return None
+    if n == 0:
         return 1
     else:
         return n * factorial(n - 1)

@@ -104,3 +104,16 @@ print(getattr(test, key))
 # round - **decimal** rounding. rounds towards **even** numbers if in middle/tied
 # see Note around floats and their limitations:  https://docs.python.org/3/library/functions.html#round
 print(f'{round(Decimal("2.55"), 1)} {round(Decimal("2.65"), 1)}')
+
+
+# type vs isinstance.  isinstance cares about inheritance, type does not
+class Publication:
+    pass
+class Book(Publication):
+    pass
+
+p = Publication()
+b = Book()
+print(f"type comparison (publication object same type as book object?): {type(p) == type(b)}")
+print(f"isintance(b,Book) (is a book object an instance of Book?): {isinstance(b, Book)}")
+print(f"isintance(b,Publication) (is a book object an instance of Publication?): {isinstance(b, Publication)}")

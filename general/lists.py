@@ -15,7 +15,7 @@ lst.pop(0) # remove and return val at optional index or last if not specified
 del lst[0]
 print("lst:", lst)
 
-lst_copy = lst.copy() # shallow copy
+lst_copy = lst.copy() # shallow copy.  see stdlib/copy_qa.py for deep copy
 lst.clear() # del lst[:]
 print("lst:", lst, "lst_copy", lst_copy)
 

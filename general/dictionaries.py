@@ -47,6 +47,7 @@ print("d:", d, "d_copy:", d_copy)
 # if key in dict, return val
 # if not insert with opt defaut and return default
 # can be used to init mutable dict vals
+# see collections defaultdict
 d.setdefault('list key', []).append('val')
 d.setdefault('key')
 print("d:", d)

@@ -8,6 +8,8 @@ print(lst, "flattened:", [item for sublist in lst for item in sublist])
 
 # later for clause nested in earlier for clause
 print("nested:", [(x, y) for x in range(3) for y in range(2)])
+print("nested2:", [[i+j for j in range(3)] for i in range(4)])
+
 
 words = ['foo', 'bar', 'baz']
 print("conditional:", [word.upper() if word.startswith('b') else word for word in words])

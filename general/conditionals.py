@@ -1,4 +1,3 @@
-# no switch/case
 x = 3
 if x < 0:
     print(x, "is negative")
@@ -8,7 +7,33 @@ else:
     print(x, "is positive")
 
 
-# conditional expression PEP 308
+# PEP 634 Structural Pattern Matching
+# comparing against literals
+match x:
+    case 1 | 2:
+        print("x is 1 or 2")
+    case 3:
+        print("x is 3")
+    case _:
+        print("x is not 1, 2 or 3")
+
+# directly from PEP 636. bind variables
+point = (0, 5)
+match point:
+    case (0, 0):
+        print("Origin")
+    case (0, y):
+        print(f"Y={y}")
+    case (x, 0):
+        print(f"X={x}")
+    case (x, y):
+        print(f"X={x}, Y={y}")
+    case _:
+        raise ValueError("Not a point")
+
+
+
+# conditional expression PEP 308.  ternary
 print("trueval" if True else "falseval")
 print("trueval" if False else "falseval")
 

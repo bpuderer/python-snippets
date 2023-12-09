@@ -28,7 +28,7 @@ print('s1 updated with s2 and t:', s1)
 
 
 s1.remove('maroon') # KeyError if not in set
-s1.discard('white')
+s1.discard('white') # do nothing if not in set
 print('s1 with maroon, white removed:', s1)
 
 

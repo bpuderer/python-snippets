@@ -26,3 +26,20 @@ with suppress(FileNotFoundError):
     raise FileNotFoundError
     print("after exception - won't execute")
 print('after context')
+
+
+print('---')
+
+
+class MyException(Exception):
+    code = None
+    def __init__(self):
+        super().__init__(f'Error code: {self.code}')
+
+class ParticularErrorCode(MyException):
+    code = 123
+
+def raise_particular_error_code():
+    raise ParticularErrorCode
+
+raise_particular_error_code()

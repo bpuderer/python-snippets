@@ -25,6 +25,10 @@ ftn(**d1, **d2)
 ftn(*lst, *tup, **d2)  # cannot unpack d1 because multiple vals for a: TypeError
 
 
+# PEP 483, 484 Type hints
+#TODO
+
+
 # PEP 3102 keyword only args
 def ftn2(a, *, b=None, c):
     print(f"a={a} b={b} c={c}")

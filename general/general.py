@@ -9,6 +9,10 @@ a, b = b, a
 print(a, b)
 
 
+# PEP 572 assignment expression, walrus operator
+# TODO
+
+
 n = None
 print("use 'is' and 'is not' to check for None, not equality:",
       n is not None)
@@ -47,3 +51,12 @@ players = ['Drew Brees', 'Archie Manning', 'Bobby Hebert', 'Aaron Brooks']
 print(sorted(players, key=lambda n: n.split()[-1]))
 
 # no arg lambda that returns True - lambda: True
+
+
+# __init__.py files are required to make py treat dirs containing file(s) as packages
+# can be empty or contain init code for the pkg
+
+# if __name__ == "__main__":
+# execute when run as script, not imported
+
+# mro - method resolution order

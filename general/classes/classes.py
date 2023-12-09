@@ -36,7 +36,7 @@ class MyClass:
         """bar returns 100% of val"""
         return self.val * 1.0
 
-    @staticmethod
+    @staticmethod           # required to call from instance of class
     def func_in_class():
         """purpose of static method is to attach functions to classes
 
@@ -107,4 +107,5 @@ print('--')
 
 
 print(MyClass.func_in_class())
+print(c1.func_in_class())
 print(c1 + c2)
