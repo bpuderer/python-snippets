@@ -45,3 +45,5 @@ print('s1 a subset of s3?', s1.issubset(s3))
 # clear to remove all elements from set
 s1.clear()
 print('s1 cleared:', s1)
+
+# immutable set - frozenset

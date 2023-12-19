@@ -49,6 +49,7 @@ print('str() for human readable: ' + str(now))
 print('repr() for unambiguous string representation of object: ' + repr(now))
 
 
+# sum, min, max
 lst = [2, 8, 3]
 r = range(3, 5)
 print(f'sum of {lst} and {r}: {sum(chain(lst, r))}')
@@ -59,8 +60,8 @@ prices = {'STOCK1': 10.50, 'STOCK2': 8.25, 'STOCK3': 12.45, 'STOCK4': 9.75}
 print(min(lst))
 print(max(44, 9))
 print(f'stock ticker with lowest price: {min(prices, key=prices.get)}')
-print(f'stock with highest price: {max(prices.items(), key=itemgetter(1))}')
-print(f'stocks sorted by price desc: {sorted(prices.items(), key=itemgetter(1), reverse=True)}')
+print(f'stock with highest price (return stock and price): {max(prices.items(), key=itemgetter(1))}')
+print(f'stocks sorted by price desc, high to low: {sorted(prices.items(), key=itemgetter(1), reverse=True)}')
 
 
 # returns a reverse iterator vs [::-1] which returns a list
@@ -117,3 +118,17 @@ b = Book()
 print(f"type comparison (publication object same type as book object?): {type(p) == type(b)}")
 print(f"isintance(b,Book) (is a book object an instance of Book?): {isinstance(b, Book)}")
 print(f"isintance(b,Publication) (is a book object an instance of Publication?): {isinstance(b, Publication)}")
+
+
+# sorted, multiple criteria
+class Country:
+    def __init__(self, name, pop):
+        self.name = name
+        self.pop = pop
+    def __repr__(self):
+        return f'Country({self.name}, {self.pop})'
+
+countries = [Country('Sweden', 123), Country('Finland', 321), Country('Norway', 123)]
+print(sorted(countries, key=lambda x: x.name))
+print(sorted(countries, key=lambda x: x.pop))
+print(sorted(countries, key=lambda x: (x.pop, x.name)))

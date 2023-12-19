@@ -49,18 +49,16 @@ def is_balanced(test_str):
     matching_start = {'}': '{', ']': '[', ')': '('}
     stack = []
     for char in test_str:
-        if char in ['{', '(', '[']:
+        if char in '{([':
             stack.append(char)
-        elif char in ['}', ')', ']']:
+        elif char in '})]':
             if stack and stack[-1] == matching_start[char]:
                 stack.pop()
             else:
                 return False
-    if stack:
-        return False
-    return True
+    return not stack
 
-tests = ('()', '{{}}', '{(})')
+tests = ('()', '{{}}', '{(})', '{()}', '{{{}[]')
 for test in tests:
     print(f'{test}: {is_balanced(test)}')
 
@@ -68,7 +66,8 @@ for test in tests:
 
 def is_palindrome(s):
     sanitized = [char for char in s.lower() if char.isalnum()]
-    return sanitized == sanitized[::-1]
+    #return sanitized == sanitized[::-1]
+    return sanitized == list(reversed(sanitized))
 
 tests = ("A man, a plan, a canal - Panama",)
 for test in tests:
@@ -153,8 +152,10 @@ def first_unique_char(s):
             return i
     return -1
 
+print('index of first unique char:')
 print(first_unique_char("abc"))
 print(first_unique_char("aabb"))
+print(first_unique_char("aabbcdde"))
 print(first_unique_char("aabbccdde"))
 
 
