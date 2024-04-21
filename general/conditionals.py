@@ -1,10 +1,16 @@
-x = 3
-if x < 0:
-    print(x, "is negative")
-elif x == 0:
-    print(x, "is 0")
-else:
-    print(x, "is positive")
+def fizz_buzz(num):
+    if num % 3 == 0 and num % 5 == 0:
+    #if num % 15 == 0:
+        print("FizzBuzz")
+    elif num % 3 == 0:
+        print("Fizz")
+    elif num % 5 == 0:
+        print("Buzz")
+    else:
+        print(num)
+
+for i in range(1, 21):
+    fizz_buzz(i)
 
 
 # PEP 634 Structural Pattern Matching

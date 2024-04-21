@@ -1,4 +1,5 @@
 import random
+from math import sqrt
 
 
 # continue - continue with next iteration of loop
@@ -11,11 +12,11 @@ print()
 
 # no do-while in python
 # https://www.python.org/dev/peps/pep-0315/
+# https://mail.python.org/pipermail/python-ideas/2013-June/021610.html
 # while True:
-#    <setup code>
-#    if not <condition>:
+#    <code>
+#    if condition:
 #        break
-#    <loop body>
 
 
 while True:
@@ -23,6 +24,34 @@ while True:
     if i == 3:
         break
     print(i, "!= 3, trying again")
+
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    for factor in range(2, int(sqrt(num)) + 1):
+    #for factor in range(2, int(num ** 0.5) + 1):
+        if num % factor == 0:
+            return False
+    return True
+primes_up_to_twenty = [num for num in range(2, 20) if is_prime(num)]
+print(primes_up_to_twenty)
+
+def all_primes_up_to(up_to_num):
+    # more efficient
+    primes = [2]
+    for num in range(3, up_to_num):
+        sqrt_num = sqrt(num)
+        for factor in primes:
+            if num % factor == 0:
+                # not a prime
+                break
+            if factor > sqrt_num:
+                # is a prime
+                primes.append(num)
+                break
+    return primes
+print(all_primes_up_to(20))
 
 
 # https://www.youtube.com/watch?v=OSGv2VnC0go#t=15m52s
