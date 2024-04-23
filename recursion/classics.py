@@ -145,3 +145,35 @@ def quicksort(lst):
     return quicksort(left) + middle + quicksort(right)
 
 assert quicksort([10, 5, 1, 12, 44, 19, 14]) == [1, 5, 10, 12, 14, 19, 44]
+
+
+
+def cleanup_str(s):
+        return ''.join(c for c in s.lower() if c.isalpha())
+
+def is_palindrome(s):
+        if len(s) <= 1:
+            return True
+        else:
+            # check first and last char, if False short circuits
+            # [1:-1] moves in at each end one char
+            # remember [1:-1] is the second to second to last since the -1 is not inclusive
+            return s[0] == s[-1] and is_palindrome(s[1:-1])
+
+assert is_palindrome(cleanup_str("A man, a plan, a canal - Panama"))
+assert is_palindrome(cleanup_str("motor")) == False
+assert is_palindrome(cleanup_str("rotor"))
+
+
+
+def print_move(frm, to):
+    print(f'move from rod {frm} to rod {to}')
+
+def towers(num_disks, from_rod, to_rod, spare_rod):
+    if num_disks == 1:
+        print_move(from_rod, to_rod)
+    else:
+        towers(num_disks-1, from_rod, spare_rod, to_rod)
+        towers(1, from_rod, to_rod, spare_rod)
+        towers(num_disks-1, spare_rod, to_rod, from_rod)
+towers(3, 1, 3, 2)
