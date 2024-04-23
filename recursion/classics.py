@@ -166,14 +166,13 @@ assert is_palindrome(cleanup_str("rotor"))
 
 
 
-def print_move(frm, to):
-    print(f'move from rod {frm} to rod {to}')
+def towers(n, source, destination, spare):
+    if n == 1:
+        print(f'move disk 1 from rod {source} to rod {destination}')
+        return
+    towers(n - 1, source, spare, destination)
+    print(f'move disk {n} from rod {source} to rod {destination}')
+    towers(n - 1, spare, destination, source)
 
-def towers(num_disks, from_rod, to_rod, spare_rod):
-    if num_disks == 1:
-        print_move(from_rod, to_rod)
-    else:
-        towers(num_disks-1, from_rod, spare_rod, to_rod)
-        towers(1, from_rod, to_rod, spare_rod)
-        towers(num_disks-1, spare_rod, to_rod, from_rod)
-towers(3, 1, 3, 2)
+NUM_DISCS = 3
+towers(NUM_DISCS,'A', 'C', 'B')
