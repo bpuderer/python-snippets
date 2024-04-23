@@ -1,48 +1,4 @@
 
-# divide and conquer, decrease and conquer
-# reduce a problem to simpler versions of itself
-# 1 or more base cases that are easy to solve. can solve directly
-# each recursive call creates own frame
-def mult_iter(a, b):
-    result = 0
-    while b > 0:    # b times
-        result += a
-        b -= 1
-    return result
-
-
-def mult_recur(a, b):
-    if b == 1:
-        return a
-    else:
-        return a + mult_recur(a, b - 1)
-print(mult_recur(3, 4))
-
-
-
-def factorial(n):
-    if type(n) is not int or n < 0:
-        return None
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-print(f'5! = {factorial(5)}')
-
-
-
-def fib(n):
-   if n == 0 or n == 1:
-       return 1
-   else:
-       return fib(n - 1) + fib(n - 2)
-
-for n in range(5):
-    print(fib(n))
-
-
-
 def is_palindrome(s):
     def to_chars(s):
         return ''.join(c for c in s.lower() if c.isalpha())
