@@ -1,8 +1,7 @@
 import time
 
 
-# time.time() - seconds since epoch as float
-start = time.time()
-print('snoozing for 300 ms')
+start = time.perf_counter()
 time.sleep(0.3)
-print(f'{time.time() - start} elapsed')
+end = time.perf_counter()
+print(f'{end - start:.7f}s elapsed')

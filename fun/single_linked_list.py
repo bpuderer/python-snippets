@@ -14,7 +14,7 @@ class LinkedList:
         while curr is not None:
             temp.append(str(curr.data))
             curr = curr.next
-        temp.append(str(None))
+        temp.append(str(curr))
         return " -> ".join(temp)
 
     def insert_at_beginning(self, data):
