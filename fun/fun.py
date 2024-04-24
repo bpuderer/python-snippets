@@ -1,10 +1,22 @@
-from collections import OrderedDict, Counter
+from collections import Counter
+
+
+def my_counter(iterable):
+    d = {}
+    for item in iterable:
+        if item in d:
+            d[item] += 1
+        else:
+            d[item] = 1
+    return d
 
 
 # remove duplicates from sequence while preserving order
 # https://stackoverflow.com/a/7961425    Raymond Hettinger
 lst = [4, 1, 2, 1, 3, 3, 2, 4]
-print("with duplicates removed, order maintained:", list(OrderedDict.fromkeys(lst)))
+#print("with duplicates removed, order maintained:", list(OrderedDict.fromkeys(lst)))
+# Python 3.7 insertion order preserved with dicts - June 27 2018
+print("with duplicates removed, order maintained:", list(dict.fromkeys(lst)))
 
 
 
@@ -16,6 +28,19 @@ def remove_duplicates_in_place(nums):
 
 nums = [0, 0, 1, 2, 2, 2, 2, 2, 4, 4, 4]
 remove_duplicates_in_place(nums)
+print(nums)
+
+
+def remove_duplicates_in_place_unsorted(nums):
+    s = set()
+    for i in range(len(nums)-1, -1, -1):
+        if nums[i] in s:
+            del nums[i]
+        else:
+            s.add(nums[i])
+
+nums = [0, 0, 1, 2, 2, 2, 2, 2, 4, 4, 4]
+remove_duplicates_in_place_unsorted(nums)
 print(nums)
 
 
@@ -146,7 +171,8 @@ print(reverse_int(0))
 
 
 def first_unique_char(s):
-    c = Counter(s)
+    #c = Counter(s)
+    c = my_counter(s)
     for i, char in enumerate(s):
         if c[char] == 1:
             return i
@@ -154,10 +180,22 @@ def first_unique_char(s):
 
 print('index of first unique char:')
 print(first_unique_char("abc"))
-print(first_unique_char("aabb"))
+print(first_unique_char("abba"))
 print(first_unique_char("aabbcdde"))
-print(first_unique_char("aabbccdde"))
+print(first_unique_char("aabbccbdde"))
 
+
+
+# first letter to appear twice
+def repeated_character(s):
+    d = {}
+    for ch in s:
+        if ch in d:
+            return ch
+        else:
+            d[ch] = None
+
+print(f'first letter to appear twice: {repeated_character("abccbccdde")}')
 
 
 def single_number(nums):
