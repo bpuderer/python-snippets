@@ -69,6 +69,24 @@ assert sum_num_sequence_recursive([1, 4, 12, -50, 100]) == 67
 
 
 
+def sum_list_numbers_mult_by_depth(lst, initial_depth=1):
+    result = 0
+    for num in lst:
+        if isinstance(num, list):
+            result += sum_list_numbers_mult_by_depth(num, initial_depth=initial_depth+1)
+        else:
+            result += num * initial_depth
+            print(num, initial_depth)
+    return result
+
+assert sum_list_numbers_mult_by_depth([]) == 0
+assert sum_list_numbers_mult_by_depth([1, 2, 3]) == 6
+assert sum_list_numbers_mult_by_depth([1, 2, 3, [100]]) == 206
+assert sum_list_numbers_mult_by_depth([1, [100], [101]]) == 403
+assert sum_list_numbers_mult_by_depth([1, [10], [[20], [20], [[30, [40, 45]]]]]) == 686
+
+
+
 def mult_num_sequence_recursive(lst):
     if len(lst) == 0:
         return 1
