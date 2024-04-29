@@ -19,7 +19,7 @@ def factorial_iterative(n):
 def factorial(n):
     if n < 0:
         return None
-    if n == 0 or n == 1:
+    if n == 0:
        return 1
     else:
         return n * factorial(n - 1)
@@ -116,8 +116,6 @@ def exp_recur(n, pow):
     # assumes pow is >= 0
     if pow == 0:
         return 1
-    if pow == 1:
-        return n
     else:
         return n * exp_recur(n, pow - 1)
 
@@ -136,6 +134,33 @@ def str_len_recur(string):
 assert str_len_recur("abcxyz") == 6
 
 
+
+def max_value(data):
+    if len(data) == 1:
+        return data[0]
+    else:
+        val1 = data[0]
+        val2 = max_value(data[1:])
+
+        if val1 > val2:
+            return val1
+        else:
+            return val2
+
+data = [12, 13, 0, -3, -3, 12, 15, 7, 2]
+assert max_value(data) == 15
+
+
+
+def gcd_iter(a, b):
+    while b:     # b != 0
+        a, b = b, a % b
+    return a
+
+assert gcd_iter(28, 16) == 4
+assert gcd_iter(16, 28) == 4
+assert gcd_iter(17, 5) == 1
+assert gcd_iter(5, 31) == 1
 
 def gcd_recur(a, b):
     # GCD(a, b) = GCD(b, a-b)
