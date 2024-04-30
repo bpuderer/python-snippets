@@ -154,6 +154,19 @@ print(contains_duplicates([4, 5, 3, 2]))
 
 
 
+# return list of two indexes of nums that sum to target
+def two_sum(nums, target):
+    num_map = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_map:
+          return [num_map[complement], i]
+        num_map[num] = i
+
+assert two_sum([2, 8, 15, 4, -10, 6], 5) == [2, 4]
+
+
+
 def reverse_int(x: int) -> int:
     x_rev = int(str(abs(x))[::-1])
 
