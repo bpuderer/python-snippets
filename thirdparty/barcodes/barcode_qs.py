@@ -5,6 +5,7 @@ pip install pillow
 pip install pyzbar
 sudo apt-get install libzbar0
 """
+from common import decode_barcode
 
 import barcode
 from barcode.writer import ImageWriter, SVGWriter
@@ -43,4 +44,4 @@ print(read_barcode_from_image(filename))
 
 # Code 39
 create_jpeg_barcode(data, filename, fmt='code39')
-print(read_barcode_from_image(filename))
+print(decode_barcode(filename))

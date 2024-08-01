@@ -18,4 +18,5 @@ image.save(filename)
 
 image = Image.open(filename)
 decoded_data = decode(image)
+# decoding with pyzbar didn't work
 print(decoded_data[0].data.decode('utf-8'))
