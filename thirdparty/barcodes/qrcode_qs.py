@@ -3,7 +3,7 @@
     pip install qrcode
 """
 
-from common import decode_barcode
+from common import decode_barcode, decode_barcode_zxing
 import qrcode
 
 
@@ -26,4 +26,4 @@ qr.add_data(data)
 qr.make(fit=True)
 img = qr.make_image(fill='black', back_color='white')
 img.save(filename)
-print(decode_barcode(filename))
+print(decode_barcode_zxing(filename))
