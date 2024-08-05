@@ -14,14 +14,12 @@ print(has_matching_parens("(abc())"))
 print(has_matching_parens("(abc(())("))
 
 
-def reverse_string(string):
-    s = []
-    result = ''
-    for ch in string:
-        s.append(ch)
-    while s:
-        result += s.pop()
-    return result
+def reverse_string(s):
+    stack = list(s)
+    reversed_str = ""
+    while stack:
+        reversed_str += stack.pop()
+    return reversed_str
 
 TEST_STR = 'abc123'
 print(f'{TEST_STR} reversed is {reverse_string(TEST_STR)}')

@@ -138,6 +138,18 @@ print(lst)
 
 
 
+def reverse_string(s):
+    # without slicing
+    reversed_str = ""
+    for char in s:
+        reversed_str = char + reversed_str
+    return reversed_str
+
+input_string = "Reverse me"
+print(f'"{input_string}" reversed: {reverse_string(input_string)}')
+
+
+
 def contains_duplicate_one_liner(nums):
     return len(set(nums)) != len(nums)
 
@@ -173,7 +185,7 @@ def reverse_int(x: int) -> int:
     if x < 0:
         x_rev *= -1
 
-    if x_rev <= -2 ** 31 or x_rev >= 2 ** 31 - 1:
+    if x_rev < -2 ** 31 or x_rev > 2 ** 31 - 1:
         return 0
     return x_rev
 
