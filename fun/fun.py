@@ -32,15 +32,31 @@ print(nums)
 
 
 def remove_duplicates_in_place_unsorted(nums):
-    s = set()
+    seen = set()
     for i in range(len(nums)-1, -1, -1):
-        if nums[i] in s:
+        if nums[i] in seen:
             del nums[i]
         else:
-            s.add(nums[i])
+            seen.add(nums[i])
 
-nums = [0, 0, 1, 2, 2, 2, 2, 2, 4, 4, 4]
+
+def remove_duplicates_in_place_unsorted_better(nums):
+    seen = set()
+    write_index = 0
+
+    for num in nums:
+        if num not in seen:
+            seen.add(num)
+            nums[write_index] = num
+            write_index += 1
+
+    del nums[write_index:]
+
+nums = [0, 5, 4, 5, 1, 2, 1, 2, 5, 7, 0]
 remove_duplicates_in_place_unsorted(nums)
+print(nums)
+nums = [0, 5, 4, 5, 1, 2, 1, 2, 5, 7, 0]
+remove_duplicates_in_place_unsorted_better(nums)
 print(nums)
 
 
@@ -217,10 +233,10 @@ def repeated_character(s):
     for ch in s:
         if ch in d:
             return ch
-        else:
-            d[ch] = None
+        d[ch] = None
 
 print(f'first letter to appear twice: {repeated_character("abccbccdde")}')
+
 
 
 def single_number(nums):
@@ -242,6 +258,16 @@ def single_number_uses_storage(nums):
             s.add(num)
     return next(iter(s))
 
-
 print(single_number([1,2,3,4,3,4,1]))
 print(single_number_uses_storage([1,2,3,4,3,4,1]))
+
+
+
+# swap two numbers without temp storage and not using a, b = b, a
+a = 10
+b = 20
+print(f'Before swap  a: {a}  b: {b}')
+a = a + b
+b = a - b
+a = a - b
+print(f'After swap   a: {a}  b: {b}')
