@@ -224,10 +224,10 @@ print(f'first letter to appear twice: {repeated_character("abccbccdde")}')
 
 
 def single_number(nums):
-    # all other nums in list appear exactly twice
-    # 2 ^ 2 = 0
-    # 2 ^ 0 = 2
-    # true only if args differ
+    # find the unique number where all other nums appear exactly twice
+    # XOR properties:
+    # XOR of a number with itself is 0.  2 ^ 2 = 0
+    # XOR of a number with 0 is the number itself.  2 ^ 0 = 2
     a = 0
     for num in nums:
         a ^= num
